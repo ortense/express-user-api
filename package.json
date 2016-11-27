@@ -1,0 +1,60 @@
+{
+  "name": "express-user-api",
+  "version": "1.0.0",
+  "description": "API RESTful para autenticação de usuário",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production babel-node index.js",
+    "test": "npm run lint && cross-env NODE_ENV=test mocha --opts test/mocha.opts test/unit/**/*.js test/integration/**/*.js test/contract/**/*.js",
+    "test-unit": "cross-env NODE_ENV=test mocha --opts test/mocha.opts test/unit/**/*.js",
+    "test-integration": "cross-env NODE_ENV=test mocha --opts test/mocha.opts test/integration/**/*.js",
+    "test-contract": "cross-env NODE_ENV=test mocha --opts test/mocha.opts test/contract/**/*.js",
+	"prepush": "npm test",
+    "lint": "eslint ./**/*.js",
+    "dev": "nodemon --exec babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ortense/express-user-api.git"
+  },
+  "keywords": [
+    "express",
+    "es6",
+    "user",
+    "api"
+  ],
+  "author": "Marcus Ortense <marcus.ortense@outlook.com> (https://medium.com/marcus-ortense)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ortense/express-user-api/issues"
+  },
+  "homepage": "https://github.com/ortense/express-user-api#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-polyfill": "^6.16.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.11.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "husky": "^0.11.9",
+    "joi": "^10.0.1",
+    "joi-assert": "0.0.3",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^2.0.1"
+  },
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.18.0",
+    "body-parser": "^1.15.2",
+    "cross-env": "^3.1.3",
+    "crypto": "0.0.3",
+    "express": "^4.14.0",
+    "express-decorators": "^0.5.0",
+    "http-status": "^0.2.3",
+    "jsonwebtoken": "^7.1.9",
+    "sequelize": "^3.27.0",
+    "sqlite3": "^3.1.8"
+  }
+}
