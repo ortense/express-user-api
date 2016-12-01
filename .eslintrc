@@ -10,6 +10,7 @@
         "sourceType": "module"
     },
     "rules": {
+        "semi": 0,
         "arrow-body-style": [
             2,
             "as-needed"

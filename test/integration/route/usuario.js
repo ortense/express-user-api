@@ -42,8 +42,8 @@ describe('Integration: Route Usuario', () => {
 				.expect(200)
 				.end((err, res) => {
 					expect(res.body[0].nome).to.eql(defaultUser.nome)
-        			expect(res.body[0].email).to.eql(defaultUser.email)
-        			done(err)
+					expect(res.body[0].email).to.eql(defaultUser.email)
+					done(err)
 				})
 		})
 
@@ -54,7 +54,7 @@ describe('Integration: Route Usuario', () => {
 				.expect(200)
 				.end((err, res) => {
 					expect(res.body[0].telefones).to.eql(defaultUser.telefones)
-        			done(err)
+					done(err)
 				})
 		})
 	})
@@ -67,8 +67,8 @@ describe('Integration: Route Usuario', () => {
 				.expect(200)
 				.end((err, res) => {
 					expect(res.body.nome).to.eql(defaultUser.nome)
-        			expect(res.body.email).to.eql(defaultUser.email)
-        			done(err)
+					expect(res.body.email).to.eql(defaultUser.email)
+					done(err)
 				})
 		})
 
@@ -79,7 +79,7 @@ describe('Integration: Route Usuario', () => {
 				.expect(200)
 				.end((err, res) => {
 					expect(res.body.telefones).to.eql(defaultUser.telefones)
-        			done(err)
+					done(err)
 				})
 		})
 
@@ -90,16 +90,16 @@ describe('Integration: Route Usuario', () => {
 				.end((err, res) => {
 					expect(res.body.mensagem)
 						.to.have.string('Não autorizado')
-        			done(err)
+					done(err)
 				})
 		})
 	})
 
 	describe('PUT /usuario/:id', () => {
 		const userUpdate = {
-        	id: 1,
-        	nome: 'User Updated',
-		}
+				id: 1,
+				nome: 'User Updated',
+			}
 
 		it('should update a user', done => {
 			request.put(`/usuario/${defaultUser.id}`)

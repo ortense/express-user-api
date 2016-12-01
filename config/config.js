@@ -9,7 +9,7 @@ export default {
 		dialect: 'sqlite',
 		storage: `${NODE_ENV}_users.sqlite`,
 		define: {
-			underscored: true,
+			underscored: true
 		}
 	}
 }

@@ -25,16 +25,16 @@ export default (sequelize, DataType) => {
 				async isUnique(value, next) {
 					try {
 						const user = await Usuario.findOne({
-		                    where: {email: value},
-		                    attributes: ['id']
-		                })
+								where: {email: value},
+								attributes: ['id']
+							})
 						if (user) {
 							next('E-mail já existente')
 						}
 						else next()
 					}
-	                catch(error) { next(error) }
-	            }
+					catch(error) { next(error) }
+				}
 			}
 		},
 		senha: {
@@ -143,7 +143,7 @@ export default (sequelize, DataType) => {
 				catch(error) { throw error }
 			}
 		}
-    })
+	})
 
 	return Usuario
 }

@@ -32,7 +32,7 @@ describe('Integration: Route Auth', () => {
 					expect(res.body).to.have.property('data_criacao')
 					expect(res.body).to.have.property('data_atualizacao')
 					expect(res.body).to.have.property('ultimo_login')
-        			done(err)
+					done(err)
 				})
 		})
 
@@ -45,7 +45,7 @@ describe('Integration: Route Auth', () => {
 					Usuario.verifyToken(res.body.token)
 						.then(email => {
 							expect(email).to.eql(newUser.email)
-		        			done(err)
+							done(err)
 						})
 						.catch(err => done(err))
 				})

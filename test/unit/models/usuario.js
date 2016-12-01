@@ -1,12 +1,12 @@
-describe('Unit: Model Usuario', ()=> {
+describe('Unit: Model Usuario', () => {
 	const Usuario = app.datasource.models.Usuario
 	const senha   = 'uma senha qualquer'
 	const email   = 'test@email.com'
 
-	describe('.encrypt', ()=> {
+	describe('.encrypt', () => {
 		it('should always return the same hash for a string.', done => {
 			const hash1 = Usuario.encrypt(senha)
-			setTimeout(()=> {
+			setTimeout(() => {
 				const hash2 = Usuario.encrypt(senha)
 				expect(hash2).to.eql(hash1)
 				done()
@@ -14,8 +14,8 @@ describe('Unit: Model Usuario', ()=> {
 		})
 	})
 
-	describe('.getToken', ()=> {
-		it('should return a JWT', ()=> {
+	describe('.getToken', () => {
+		it('should return a JWT', () => {
 			const token = Usuario.getToken(email)
 			expect(token).to.be.a('string')
 			expect(token.split('.').length).to.be.eql(3)
@@ -33,5 +33,4 @@ describe('Unit: Model Usuario', ()=> {
 				.catch(e => done(e))
 		})
 	})
-
 })

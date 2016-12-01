@@ -34,7 +34,7 @@ export default class Usuario {
 	}
 
 	@decorator.get('/')
-    async getAll(request, response) {
+	async getAll(request, response) {
 		try {
 			const userList = await this.UsuarioModel.findAll({
 				where: {},
@@ -47,7 +47,7 @@ export default class Usuario {
 			response.status(HTTPStatus.OK).json(userList)
 		}
 		catch(error) { responseError(response, error) }
-    }
+	}
 
 	@decorator.get('/:id')
 	async getById(request, response){
@@ -69,9 +69,9 @@ export default class Usuario {
 	async update(request, response) {
 		try {
 			const updates = await this.UsuarioModel.update(
-				request.body,
-				{where: {id: request.params.id}
-			})
+					request.body,
+					{where: {id: request.params.id}
+				})
 			response.status(HTTPStatus.OK).json(updates)
 		}
 		catch(error) { responseError(response, error) }

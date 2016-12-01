@@ -9,7 +9,7 @@
     "test-unit": "cross-env NODE_ENV=test mocha --opts test/mocha.opts test/unit/**/*.js",
     "test-integration": "cross-env NODE_ENV=test mocha --opts test/mocha.opts test/integration/**/*.js",
     "test-contract": "cross-env NODE_ENV=test mocha --opts test/mocha.opts test/contract/**/*.js",
-	"prepush": "npm test",
+    "prepush": "npm test",
     "lint": "eslint ./**/*.js",
     "dev": "nodemon --exec babel-node index.js"
   },

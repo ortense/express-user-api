@@ -57,7 +57,7 @@ describe('Contract: Usuario', () => {
 				.expect(200)
 				.end((err, res) => {
 					joiAssert(res.body, userList)
-        			done(err)
+					done(err)
 				})
 		})
 	})
@@ -85,7 +85,7 @@ describe('Contract: Usuario', () => {
 				.expect(200)
 				.end((err, res) => {
 					joiAssert(res.body, user)
-        			done(err)
+					done(err)
 				})
 		})
 	})

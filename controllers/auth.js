@@ -34,8 +34,8 @@ export default class Auth {
 			const email = request.body.email
 			const senha = this.UsuarioModel.encrypt(request.body.senha)
 			const user  = await this.UsuarioModel.findOne({
-				where: {email, senha}
-			})
+					where: {email, senha}
+				})
 
 			if(user) {
 				await this.UsuarioModel.update({
@@ -63,7 +63,6 @@ export default class Auth {
 					mensagem: 'Usuário e/ou senha inválidos'
 				})
 			}
-
 		}
 		catch(error) { responseError(response, error) }
 	}
