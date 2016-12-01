@@ -40,7 +40,6 @@ describe('Contract: Usuario', () => {
 				id: Joi.number(),
 				nome: Joi.string(),
 				email: Joi.string(),
-				senha: Joi.string(),
 				token: Joi.string(),
 				data_criacao: Joi.date().iso(),
 				data_atualizacao: Joi.date().iso(),

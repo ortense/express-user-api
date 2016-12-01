@@ -12,6 +12,15 @@ export default class Usuario {
 	constructor(UsuarioModel, TelefoneModel) {
 		this.UsuarioModel  = UsuarioModel
 		this.TelefoneModel = TelefoneModel
+		this.visibleFields = [
+				'id',
+				'nome',
+				'email',
+				'token',
+				'ultimo_login',
+				'data_criacao',
+				'data_atualizacao'
+			]
 	}
 
 	@decorator.use
@@ -37,6 +46,7 @@ export default class Usuario {
 	async getAll(request, response) {
 		try {
 			const userList = await this.UsuarioModel.findAll({
+				attributes: this.visibleFields,
 				where: {},
 				include: [{
 					model: this.TelefoneModel,
@@ -53,6 +63,7 @@ export default class Usuario {
 	async getById(request, response){
 		try {
 			const user = await this.UsuarioModel.findOne({
+				attributes: this.visibleFields,
 				where: {id: request.params.id},
 				include: [{
 					model: this.TelefoneModel,
