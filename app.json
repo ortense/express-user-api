@@ -1,0 +1,20 @@
+{
+  "name": "express-user-api",
+  "scripts": {
+  },
+  "env": {
+    "NODE_ENV": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
